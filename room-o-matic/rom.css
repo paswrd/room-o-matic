@@ -86,7 +86,7 @@ h1	{
 .jdGallery .slideElement {
 	width: 100%;
 	height: 100%;
-	background-color: #000;
+	background-color: transparent;
 	background-repeat: no-repeat;
 	}
 
@@ -96,7 +96,7 @@ h1	{
 	position: absolute;
 	left: 0;
 	top: 0;
-	background-color: #000;
+	background-color: transparent;
 	}
 
 .jdGallery div.carouselContainer {
@@ -179,7 +179,7 @@ h1	{
 .jdGallery a.right, .jdGallery a.left {
 	position: absolute;
 	display: block;
-	height: 254px;
+	height: 180px;
 	width: 60px;
 	cursor: pointer;
 	z-index: 10;
@@ -205,18 +205,38 @@ h1	{
 	background-position: 35px -254px;
 	}
 
+.jdGallery a.btn-prev, .jdGallery a.btn-next {
+	position: absolute;
+	bottom: 0;
+	height: 74px;
+	width: 60px;
+	z-index: 20;
+	cursor: pointer;
+	display: block;
+	}
+
+.jdGallery a.btn-prev {
+	left: 10px;
+	width: 80px;
+	}
+
+.jdGallery a.btn-next {
+	right: 10px;
+	width: 80px;
+	}
+
 .jdGallery a.open {
 	left: 0;
 	top: 0;
 	width: 100%;
-	height: 100%;
+	height: 180px;
 	}
 
 .withArrows a.open {
 	position: absolute;
 	top: 0;
 	left: 25%;
-	height: 99%;
+	height: 180px;
 	width: 50%;
 	cursor: pointer;
 	z-index: 10;
@@ -233,9 +253,11 @@ h1	{
 .tabcontentstyle {
 	position: absolute;
 	top: 0;
+	left: 0;
 	right: 0;
+	margin: 0 auto;
 	width: 722px;
-	height: 525px;
+	height: 585px;
 	overflow: hidden;
 	padding: 0;
 	color: #FFF;
@@ -252,7 +274,7 @@ h1	{
 	}
 
 .tabcontent .tabcontentstyle {
-	top: 34px;
+	top: 94px;
 	height: 491px;
 	}
 

@@ -20,13 +20,13 @@
 		***********************************************/
 	</script>
 
-	<title>Habborator | Room-o-matic</title>
+	<title>Room-o-matic</title>
 </head>
 
 <body>
 	<div id="visual_only">&nbsp;</div>
 
-	<h1 id="head"><a href="../index.html" title="Habborator">&#171; Habborator</a> :: Room-o-matic</h1>
+	<h1 id="head">Room-o-matic :: by Habborator</h1>
 
 	<ul id="maintab">
 		<li class="selected"><a href="#" rel="tcontent1"></a></li>
@@ -54,7 +54,7 @@
 
 		<script type="text/javascript">
 			function startGallery() {
-			var myGallery = new gallery($('myGallery'), {
+			window.myGallery = new gallery($('myGallery'), {
 			timed: false,
 			showArrows: true,
 			showCarousel: false,
@@ -65,6 +65,10 @@
 		</script>
 
 		<div id="myGallery">
+			<div class="imageElement">
+				<a href="javascript:window.myGallery.nextItem()" title="Start" class="open"></a>
+				<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="full" alt="" />
+			</div>
 			<div class="imageElement">
 				<a href="javascript:expandtab('maintab',1)" title="Display room" class="open"></a>
 				<img src="gfx/preview_01.gif" class="full" alt="" />

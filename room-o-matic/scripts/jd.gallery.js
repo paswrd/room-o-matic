@@ -95,24 +95,41 @@ var gallery = new Class({
 				href: '#',
 				title: ''
 			}).injectInside(element);
+
+			this.btnNext = new Element('a').addClass('btn-next').setProperties({
+				href: '#',
+				title: ''
+			}).injectInside(element);
+
+			this.btnPrev = new Element('a').addClass('btn-prev').setProperties({
+				href: 'javascript:window.myGallery.goTo(0)',
+				title: 'Start'
+			}).injectInside(element);
+
 			if ((!this.options.showArrows) && (!this.options.showCarousel))
 				this.galleryElement = element = this.currentLink;
-			else
+			else {
 				this.currentLink.setStyle('display', 'none');
+				this.btnNext.setStyle('display', 'none');
+				this.btnPrev.setStyle('display', 'none');
+			}
 		}
 		
 		this.constructElements();
 		if ((data.length>1)&&(this.options.showArrows))
 		{
-			var leftArrow = new Element('a').addClass('left').addEvent(
+			this.leftArrow = new Element('a').addClass('left').addEvent(
 				'click',
 				this.prevItem.bind(this)
 			).injectInside(element);
-			var rightArrow = new Element('a').addClass('right').addEvent(
+			this.rightArrow = new Element('a').addClass('right').addEvent(
 				'click',
 				this.nextItem.bind(this)
 			).injectInside(element);
 			this.galleryElement.addClass(this.options.withArrowsClass);
+			
+			this.leftArrow.setStyle('display', 'none');
+			this.rightArrow.setStyle('display', 'none');
 		}
 		this.loadingElement = new Element('div').addClass('loadingElement').injectInside(element);
 		if (this.options.showInfopane) this.initInfoSlideshow();
@@ -246,6 +263,15 @@ var gallery = new Class({
 			this.currentIter = num;
 		}
 		this.doSlideShow.bind(this)();
+		if (this.options.showArrows && this.leftArrow && this.rightArrow) {
+			if (this.currentIter === 0) {
+				this.leftArrow.setStyle('display', 'none');
+				this.rightArrow.setStyle('display', 'none');
+			} else {
+				this.leftArrow.setStyle('display', 'block');
+				this.rightArrow.setStyle('display', 'block');
+			}
+		}
 		this.fireEvent('onChanged');
 	},
 	clearTimer: function() {
@@ -420,14 +446,31 @@ var gallery = new Class({
 		this.currentLink.setProperties({
 			href: this.galleryData[num].link,
 			title: this.galleryData[num].linkTitle
-		})
-		if (!((this.options.embedLinks) && (!this.options.showArrows) && (!this.options.showCarousel)))
-			this.currentLink.setStyle('display', 'block');
+		});
+		this.btnNext.setProperties({
+			href: this.galleryData[num].link,
+			title: this.galleryData[num].linkTitle
+		});
+		if (!((this.options.embedLinks) && (!this.options.showArrows) && (!this.options.showCarousel))) {
+			if (num === 0) {
+				this.currentLink.setStyle('display', 'none');
+				this.btnNext.setStyle('display', 'block');
+				this.btnPrev.setStyle('display', 'none');
+			} else {
+				this.currentLink.setStyle('display', 'block');
+				this.btnNext.setStyle('display', 'block');
+				this.btnPrev.setStyle('display', 'block');
+			}
+		}
 	},
 	clearLink: function() {
 		this.currentLink.setProperties({href: '', title: ''});
-		if (!((this.options.embedLinks) && (!this.options.showArrows) && (!this.options.showCarousel)))
+		this.btnNext.setProperties({href: '', title: ''});
+		if (!((this.options.embedLinks) && (!this.options.showArrows) && (!this.options.showCarousel))) {
 			this.currentLink.setStyle('display', 'none');
+			this.btnNext.setStyle('display', 'none');
+			this.btnPrev.setStyle('display', 'none');
+		}
 	}
 });
 gallery.implement(new Events);
