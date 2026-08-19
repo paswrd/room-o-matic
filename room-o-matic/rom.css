@@ -1,0 +1,291 @@
+html {
+	overflow: hidden;
+	}
+
+body	{
+	margin: 0;
+	padding: 0;
+	background: #222;
+	font-family: verdana, arial;
+	font-size: x-small;
+	voice-family: "\"}\"";
+	voice-family: inherit;
+	font-size: small;
+	}
+
+img	{
+	margin: 0;
+	border: 0;
+	}
+
+* {
+	-moz-outline: none;
+	}
+
+#visual_only {
+	width: 100%;
+	height: 34px;
+	margin: 0;
+	border-bottom: 1px solid #FFF;
+	padding: 0;
+	background: #000;
+	filter:alpha(opacity=20);
+	opacity: 0.2;	
+	}
+
+h1	{
+	position: absolute;
+	top: 9px;
+	left: 10px;
+	margin: 0;
+	line-height: 80%;
+	font-family: 'Trebuchet MS', trebuchet, arial, verdana;
+	font-size: 140%;
+	font-weight: normal;
+	color: #FFF;
+	}
+
+#head a:link, #head a:visited, #head a:active {
+	color: #FFF;
+	text-decoration: none;
+	}
+
+#head a:hover, #head a:focus {
+	color: #B5EF6B;
+	}
+
+
+#console {
+	position: absolute;
+	bottom: 0;
+	left: 20px;
+	width: 324px;
+	height: 477px;
+	background: transparent url(gfx/console.gif) 0 0 no-repeat;
+	z-index: 10;
+	}
+
+#myGallery {
+	width: 270px;
+	height: 254px;
+	margin: 65px 0 0 26px;
+	z-index: 5;
+	display: none;
+	}
+
+.jdGallery {
+	overflow: hidden;
+	position: relative;
+	}
+
+.jdGallery img {
+	border: 0;
+	margin: 0;
+	}
+
+.jdGallery .slideElement {
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	background-repeat: no-repeat;
+	}
+
+.jdGallery .loadingElement {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background-color: #000;
+	}
+
+.jdGallery div.carouselContainer {
+	position: absolute;
+	height: 135px;
+	width: 100%;
+	z-index: 10;
+	margin: 0px;
+	left: 0;
+	top: 0;
+	}
+
+.jdGallery a.carouselBtn {
+	position: absolute;
+	bottom: 0;
+	right: 30px;
+	height: 20px;
+	/*width: 100px;*/
+	text-align: center;
+	padding: 0 10px;
+	font-size: 13px;
+	background: #333;
+	color: #fff;
+	cursor: pointer;
+	}
+
+.jdGallery .carousel {
+	position: absolute;
+	width: 100%;
+	margin: 0px;
+	left: 0;
+	top: 0;
+	height: 115px;
+	background: #333;
+	color: #fff;
+	text-indent: 0;
+	overflow: hidden;
+	}
+
+.jdGallery .carousel .carouselWrapper {
+	position: absolute;
+	width: 100%;
+	height: 78px;
+	top: 10px;
+	left: 0;
+	overflow: hidden;
+	}
+
+.jdGallery .carousel .carouselInner {
+	position: relative;
+	}
+
+.jdGallery .carousel .carouselInner .thumbnail {
+	cursor: pointer;
+	background: #000;
+	background-position: center center;
+	float: left;
+	border: solid 1px #fff;
+	}
+
+.jdGallery .carousel .label {
+	font-size: 13px;
+	position: absolute;
+	bottom: 5px;
+	left: 10px;
+	padding: 0;
+	margin: 0;
+	}
+
+.jdGallery .carousel .label .number {
+	color: #b5b5b5;
+	}
+
+.jdGallery a {
+	font-size: 100%;
+	text-decoration: none;
+	color: inherit;
+	}
+
+.jdGallery a.right, .jdGallery a.left {
+	position: absolute;
+	display: block;
+	height: 254px;
+	width: 60px;
+	cursor: pointer;
+	z-index: 10;
+	}
+
+.jdGallery a.left {
+	left: 0;
+	top: 0;
+	background: url(gfx/arrow_left.gif) no-repeat top right;
+	}
+
+.jdGallery a.right {
+	right: 0;
+	top: 0;
+	background: url(gfx/arrow_right.gif) no-repeat top left;
+	}
+
+.jdGallery a.right:hover {
+	background-position: 0 -254px;
+	}
+
+.jdGallery a.left:hover {
+	background-position: 35px -254px;
+	}
+
+.jdGallery a.open {
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	}
+
+.withArrows a.open {
+	position: absolute;
+	top: 0;
+	left: 25%;
+	height: 99%;
+	width: 50%;
+	cursor: pointer;
+	z-index: 10;
+	background: none;
+	-moz-opacity:0.8;
+	-khtml-opacity: 0.8;
+	opacity: 0.8;
+	}
+
+#maintab {
+	display: none;
+	}
+	
+.tabcontentstyle {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 722px;
+	height: 525px;
+	overflow: hidden;
+	padding: 0;
+	color: #FFF;
+	}
+
+.tabcontent {
+	display:none;
+	}
+
+@media print {
+	.tabcontent {
+	display:block!important;
+	}
+	}
+
+.tabcontent .tabcontentstyle {
+	top: 34px;
+	height: 491px;
+	}
+
+.tabcontent ul {
+	height: 34px;
+	margin: 0;
+	padding: 0;
+	}
+
+.tabcontent ul li {
+	list-style: none;
+	display: inline;
+	margin: 0;
+	}
+
+.tabcontent ul li a:link, .tabcontent ul li a:visited, .tabcontent ul li a:active {
+	display: block;
+	float: left;
+	margin: 5px 2px 0 0;
+	border: 1px solid #FFF;
+	padding: 2px 5px;
+	font-size: 120%;
+	font-weight: bold;
+	color: #FFF;
+	text-decoration: none;
+	}
+
+.tabcontent ul li a:hover {
+	border: 1px solid #B5EF6B;
+	color: #B5EF6B;
+	}
+
+.tabcontent ul li a:focus {
+	border: 1px solid #4E4E4E;
+	color: #4E4E4E;
+	}
